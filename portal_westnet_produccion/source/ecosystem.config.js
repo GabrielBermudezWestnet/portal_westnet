@@ -12,8 +12,8 @@ module.exports = {
       user : 'root',
       host : '192.168.2.115',
       ref  : 'origin/master',
-      repo : 'https://github.com/GabrielBermudezWestnet/portal_westnet.git',
-      path : 'var/www/portal_westnet_produccion',
+      repo : '',
+      path : '',
       'pre-deploy-local': '',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
