@@ -1,8 +1,41 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root{
+  --bg-color: hsl(239, 59%, 35%);
+  --bg-color-redirect-message: hsla(0, 0%, 0%, 0.144);
+  --bg-accent: hsl(346, 81%, 56%);
+
+  --text-color: hsl(0, 0%, 100%);
+
+  --border: 1px solid hsl(0,0,50%);
+  --border-radius: 8px;
+
+  --speed: 100;
+
+  font-family: 'Uchen', serif;
+  font-size: .5rem;
+
+  height : 100%;
+  width : 100%;
 }
 
-a {
-  color: #00B7FF;
+body {
+  height : 100%;
+  width : 100%;
+  background: var(--bg-color);
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.redirect-message {
+  text-align: center;
+  background: var(--bg-color-redirect-message);
+  font-size: var(--font-size);
+  height:50%;
+  width: 50%;
+}
+
+.border {
+  background:var(--bg-accent);
+  border: none;
+  border-style: none;
+
 }
