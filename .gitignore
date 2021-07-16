@@ -1,2 +1,8 @@
+# node stuff
 node_modules
+
+# environment variables
 .env
+
+# vscode extensions
+.vscode/settings.json
