@@ -18,8 +18,8 @@ router.get('/system-disabled', function(req, res, next) {
     res.render('system-disabled');
 });
 
-router.get('/error-bill-closed', function(req, res, next) {
-  res.render('error-bill-closed');
+router.get('/error-bill-draft', function(req, res, next) {
+  res.render('error-bill-draft');
 });
-error-bill-closed
+
 module.exports = router;
