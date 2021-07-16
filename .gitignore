@@ -3,6 +3,8 @@ node_modules
 
 # environment variables
 .env
+package-lock.json
+ecosystem.config.js
 
 # vscode extensions
 .vscode/settings.json
