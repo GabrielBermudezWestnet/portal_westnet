@@ -1,7 +1,8 @@
 :root{
-  --bg-color: hsl(239, 59%, 35%);
+  --bg-color-dark: #08084E;
+  --bg-color-light: #1C36A2;
   --bg-color-redirect-message: hsla(0, 0%, 0%, 0.144);
-  --bg-accent: hsl(346, 81%, 56%);
+  --bg-accent: hsla(347, 100%, 98%, 0.26);
 
   --text-color: hsl(0, 0%, 100%);
 
@@ -20,7 +21,7 @@
 body {
   height : 100%;
   width : 100%;
-  background: var(--bg-color);
+  background: linear-gradient(var(--bg-color-light), var(--bg-color-dark));
   text-decoration: none;
   color: var(--text-color);
 }
@@ -33,9 +34,20 @@ body {
   width: 50%;
 }
 
-.border {
+.col-md-2 {
   background:var(--bg-accent);
   border: none;
   border-style: none;
+}
 
+.row {
+  margin: 0;
+}
+
+.company-logo{
+  display: flex;
+  flex-direction: row;
+}
+.container {
+  padding: 0;
 }
