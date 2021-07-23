@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/success', function(req, res, next) {
-  res.render('success');
+  companyName = "Westnet S.A";
+  msg = "Su pago ha sido registrado\nMuchas gracias por usar nuestros servicios de pago";
+  res.render('success', {
+    'redirectMessage' : msg,
+    'companyName' : companyName
+  });
 });
 
 router.get('/bill-payed', function(req, res, next) {

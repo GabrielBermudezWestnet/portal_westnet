@@ -1,9 +1,8 @@
 :root{
   --bg-color-dark: #08084E;
   --bg-color-light: #1C36A2;
-  --bg-color-redirect-message: hsla(0, 0%, 0%, 0.205);
-  --bg-accent: hsla(347, 100%, 98%, 0.26);
-
+  --bg-dull: hsla(347, 100%, 98%, 0.26);
+  --accent-color: #EA345F;
   --text-color: hsl(0, 0%, 100%);
 
   --border: 1px solid hsl(0,0,50%);
@@ -25,32 +24,53 @@ body {
   color: var(--text-color);
   font-size: var(--font-size);
 
+  display: flex;
+  flex-direction: row;
 }
 
 .col-md-8{
+  flex:3;
+  
   display: flex;
 }
 
 .col-md-2 {
-  background:var(--bg-accent);
+  flex:1;
+
+  background:var(--bg-dull);
   border: none;
   border-style: none;
 }
 
-.container {
+.content {
+  --bgcolor-content-light: #08084E;
+  --bgcolor-content-dark: #1C36A2;
+
   padding: 0;
   text-align: center;
-  background: var(--bg-color-redirect-message);
-  height: 70%;
-  width: 70%;
+  background: 
+    linear-gradient(
+      45deg,
+      var(--bgcolor-content-dark) 0%, 
+      var(--bgcolor-content-light) 50%,
+      var(--bgcolor-content-dark) 100% 
+    );
+  background-size: 300% 300%;
+
+  box-shadow: 0 0 1em 1em var(--accent-color);
+
+  height: 60%;
+  width: 60%;
   margin: auto auto;
   border-radius: var(--border-radius);
 
-  display: flex;
   justify-content: center;
   align-items: center;
+  
+  display: flex;
   flex-direction: column;
 
+  animation: gradient 5s linear infinite alternate-reverse;
 }
 
 .logo-structre-container{
@@ -58,7 +78,6 @@ body {
   height: auto;
   margin: auto;
   position: relative;
-
 }
 .company-logo{
   width: 100%;
@@ -67,7 +86,7 @@ body {
   position: relative;
 }
 .box-logo{
-  --speed: 2.5s;
+  --speed: 2.3s;
   width: 23.6%;
   height: auto;
   
@@ -75,14 +94,14 @@ body {
   left: 0;
   bottom: 0;
 
-  animation: logo-spin var(--speed) infinite ease-in-out;
+  animation: logo-spin var(--speed) infinite ease-in-out alternate-reverse;
 }
 
 .redirect-message {
   width: 80%;
   height: auto;
   margin: auto;
-  font-size: 1em;
+  font-size: 2vw;
   text-transform: capitalize;
 }
 .row {
@@ -94,12 +113,27 @@ body {
   0% {
     transform: rotate(0deg) scale(1, 1);
   }
-  
+
+  10% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+
   50% {
-    transform: rotate(180deg) scale(.75, .75);
+    transform: rotate(180deg) scale(.60, .60);
   }
   
+  90% {
+    transform: rotate(360deg) scale(1, 1);
+  }
   100% {
     transform: rotate(360deg) scale(1, 1);
   }
+
+}
+
+@keyframes gradient {
+    0%{background-position:left bottom}
+    50%{background-position:center center}
+    
+    100%{background-position:right top}
 }

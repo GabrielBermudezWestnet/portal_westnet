@@ -11,24 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Westnet S.A</title>
+    <title><%= companyName %> </title>
 </head>
 
 <body>
     <div class="row justify-content-center h-100 w-100 border-0">
         <div class="col-md-2"> </div>
         <div class="col-md-8">
-            <div class="container">
+            <div class="content">
                 <div class="logo-structre-container">
                     <img class="company-logo" src="/images/LogoCompanyNameAsset.png" alt="">
                     <img class="box-logo" src="/images/LogoBoxAsset.png" alt="">
                 </div>
 
                 <h2 class="redirect-message">    
-                    Su pago ha sido registrado
-                    <br>
-                    <br>
-                    Muchas gracias por usar nuestros servicios de pago
+                    <%= redirectMessage %> 
                 </h2>
                 <div id="countdown"></div>
             </div>
@@ -46,7 +43,7 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
-    <script>
+    <!-- <script>
         window.onload = updateClock;
         var totalTime = 10;
         function updateClock() {
@@ -58,7 +55,7 @@
                 setTimeout("updateClock()",1000);
             }   
         }
-    </script> 
+    </script> --> 
 </body>
 
 </html>
