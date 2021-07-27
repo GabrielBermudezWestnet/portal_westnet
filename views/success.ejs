@@ -30,8 +30,8 @@
                     </h2>
                     <div id="countdown"></div>
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -50,13 +50,13 @@
         window.onload = updateClock;
         var totalTime = 10;
         function updateClock() {
-            document.getElementById('countdown').innerHTML = "Sera redireccionado en "+ totalTime;
-            if(totalTime==1){
+            document.getElementById('countdown').innerHTML = "Sera redireccionado en " + totalTime;
+            if (totalTime == 1) {
                 window.location.replace("https://westnet.com.ar/");
-            }else{
-                totalTime-=1;
-                setTimeout("updateClock()",1000);
-            }   
+            } else {
+                totalTime -= 1;
+                setTimeout("updateClock()", 1000);
+            }
         }
     </script>
 </body>
