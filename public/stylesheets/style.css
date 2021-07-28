@@ -1,38 +1,34 @@
 :root{
-    font-size: 1vw;
-  --bg-color-dark: #08084E;
-  --bg-color-light: #1C36A2;
-  --bg-dull: rgba(255, 245, 247, 0.034);
-  --accent-color: #EA345F;
-  --text-color: hsl(0, 0%, 100%);
-
-  --border: 1px solid hsl(0,0,50%);
-  --border-radius: 2.5em;
-
-
-  font-family: 'Uchen', serif;
-
-
+  font-size: 1vw;
+  font-family: 'Sans', serif;
   height : 100%;
   width : 100%;
 }
 
 body {
+  --bg-color-dark: #08084E;
+  --bg-color-light: #1C36A2;
+  --bg-dull: rgba(255, 245, 247, 0.034);
+  --orange-accent: #EA345F;
+  --text-color: hsl(0, 0%, 100%);
+  
   height : 100%;
   width : 100%;
-  background: linear-gradient(var(--bg-color-light), var(--bg-color-dark));
+  background: linear-gradient(
+    var(--bg-color-dark) 0%, 
+    var(--bg-color-light) 100%
+    );
+  /* background: linear-gradient( 
+    var(--bg-color-dark) 0%,
+    var(--bg-color-dark) 70%, 
+    var(--bg-dull) 100%
+  ); */
   text-decoration: none;
   color: var(--text-color);
   font-size: var(--font-size);
 }
-.bg {
-  background: linear-gradient(90deg, 
-    var(--bg-dull) 0%, 
-    var(--bg-color-dark) 30%, 
-    var(--bg-color-dark) 70%, 
-    var(--bg-dull) 100%
-  );
-}
+
+
 .col-md-8{
   flex:3;
   display: flex;
@@ -42,21 +38,38 @@ body {
   flex:1;
 
   background:var(--bg-dull);
-  border: none;
-  border-style: none;
 }
 
 .content {
-  --bgcolor-content-light: #08084E;
-  --bgcolor-content-dark: #1C36A2;
+  --border: 1px solid var(--bg-dull);
+  --border-radius: 2.5em;
+  --bgcolor-content-light: #17329c7c;
+  --bgcolor-content-dark: #08084E;
   background: 
     linear-gradient(
-      45deg,
+      45deg, 
       var(--bgcolor-content-dark) 0%, 
       var(--bgcolor-content-light) 50%,
       var(--bgcolor-content-dark) 100% 
     );
+
+  /* background: linear-gradient(45deg, 
+      var(--bgcolor-content-dark) 0%, 
+      var(--bgcolor-content-dark) 50%, 
+      var(--bgcolor-content-light) 48%, 
+      var(--bgcolor-content-light) 52%, 
+      var(--bgcolor-content-dark) 55%, 
+      var(--bgcolor-content-dark) 100%
+    );  */ 
+
   background-size: 300% 300%;
+  
+  --orange-accent: #EA345F;
+  --text-color: hsl(0, 0%, 100%);
+ /*  border: none;
+  border-style: none; */
+  border-style: solid;
+  border-width: .15em;
   border-radius: var(--border-radius);
   box-shadow: 0 0 1em .1em var(--text-color);
 
@@ -105,11 +118,12 @@ body {
 }
 
 .redirect-message {
-  font-size: 1em;
+  font-size: .8em;
   text-transform: uppercase;
+  white-space: pre-wrap;
 }
 #countdown {
-  color: var(--accent-color);
+  color: var(--orange-accent);
   text-transform: none;
 }
 .row {

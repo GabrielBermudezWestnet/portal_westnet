@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
-companyName = "Westnet S.A";
+
+companyName = "Westnet";
+
 msgObject = {
-  success : "Su pago ha sido registrado\nMuchas gracias por usar nuestros servicios de pago",
-  billPayed : "Su factura se encuentra pagada.\nMuchas gracias por usar nuestros servicios de pago",
-  errorIntentionPayment : "Su link de pago no pudo ser generado.\nAguarde unos minutos e intente nuevamente!\nMuchas gracias por usar nuestros servicios de pago",
-  systemDisabled : "El sistema se encuentra inhabilitado, por favor, aguarde unos instantes.\nMuchas gracias por usar nuestros servicios de pago",
-  errorBillDraft : "Esta factura no es valida para ser pagada.\nMuchas gracias por usar nuestros servicios de pago",
+  success : "Su pago ha sido registrado\n\nMuchas gracias por usar nuestros servicios de pago",
+  billPayed : "Su factura se encuentra pagada.\n\nMuchas gracias por usar nuestros servicios de pago",
+  errorIntentionPayment : "Su link de pago no pudo ser generado.\nAguarde unos minutos e intente nuevamente!\n\nMuchas gracias por usar nuestros servicios de pago",
+  systemDisabled : "El sistema se encuentra inhabilitado\npor favor, aguarde unos instantes.\n\nMuchas gracias por usar nuestros servicios de pago",
+  errorBillDraft : "Esta factura no es valida para ser pagada.\n\nMuchas gracias por usar nuestros servicios de pago",
 };
 
 /* GET home page. */

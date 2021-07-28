@@ -11,23 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>
-        <%= companyName %>
-    </title>
+    <title><%= companyName %></title>
 </head>
 
 <body>
     <div class="row justify-content-center h-100 w-100 border-0">
-        <div class="col-md-8 bg">
+        <div class="col-md-8">
             <div class="content d-flex justify-content-around">
                 <div class="logo-structre-container mt-3">
                     <img class="company-logo" src="/images/LogoCompanyNameAsset.png" alt="">
                     <img class="box-logo" src="/images/LogoBoxAsset.png" alt="">
                 </div>
                 <div class="message-body mt-5 mb-3">
-                    <h2 class="redirect-message ">
-                        <%= redirectMessage %>
-                    </h2>
+                    <h2 class="redirect-message "><%= redirectMessage %></h2>
                     <div id="countdown"></div>
                 </div>
 
@@ -55,7 +51,7 @@
                 window.location.replace("https://westnet.com.ar/");
             } else {
                 totalTime -= 1;
-                setTimeout("updateClock()", 1000);
+                //setTimeout("updateClock()", 1000);
             }
         }
     </script>
