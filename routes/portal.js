@@ -12,6 +12,12 @@ msgObject = {
 };
 
 /* GET home page. */
+router.get('/payment-intention/:id', function(req, res, next) {
+  console.log(process.env.URL_REDIRECT_GESTION.replace('${customer_id}',req.params.id));
+  res.redirect(process.env.URL_REDIRECT_GESTION.replace('${customer_id}',req.params.id));
+});
+
+/* GET home page. */
 router.get('/success', function(req, res, next) {
   res.render('success', {
     'redirectMessage' : msgObject.success,
