@@ -105,8 +105,9 @@ body {
 }
 
 .redirect-message {
-  font-size: 1em;
+  font-size: .9em;
   text-transform: uppercase;
+  white-space: pre-wrap;
 }
 #countdown {
   color: var(--accent-color);
