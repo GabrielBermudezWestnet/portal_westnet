@@ -11,12 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../stylesheets/style.css">
+
+    <script type="text/javascript" src="/js/util.js"></script>
+
     <title><%= companyName %></title>
 </head>
 
 <body>
     <div class="row justify-content-center h-100 w-100 border-0">
-        <div class="col-md-8 bg">
+        <div class="bg">
             <div class="content d-flex justify-content-around">
                 <div class="logo-structre-container mt-3">
                     <img class="company-logo" src="/images/LogoCompanyNameAsset.png" alt="">
@@ -26,8 +29,6 @@
                     <h2 class="redirect-message "><%= redirectMessage %></h2>
                     <div id="countdown"></div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -42,19 +43,6 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
-    <script>
-        window.onload = updateClock;
-        var totalTime = 10;
-        function updateClock() {
-            document.getElementById('countdown').innerHTML = "Sera redireccionado en " + totalTime;
-            if (totalTime == 1) {
-                window.location.replace("https://westnet.com.ar/");
-            } else {
-                totalTime -= 1;
-                setTimeout("updateClock()", 1000);
-            }
-        }
-    </script>
 </body>
 
 </html>

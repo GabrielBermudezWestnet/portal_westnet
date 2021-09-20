@@ -1,5 +1,5 @@
 :root{
-    font-size: 1vw;
+  font-size: 16px;
   --bg-color-dark: #08084E;
   --bg-color-light: #1C36A2;
   --bg-dull: rgba(255, 245, 247, 0.034);
@@ -7,12 +7,11 @@
   --text-color: hsl(0, 0%, 100%);
 
   --border: 1px solid hsl(0,0,50%);
-  --border-radius: 2.5em;
-
+  --border-radius: 2.5rem;
 
   font-family: 'Uchen', serif;
-
-
+  margin: 0;
+  padding: 0;
   height : 100%;
   width : 100%;
 }
@@ -23,7 +22,6 @@ body {
   background: linear-gradient(var(--bg-color-light), var(--bg-color-dark));
   text-decoration: none;
   color: var(--text-color);
-  font-size: var(--font-size);
 }
 .bg {
   background: linear-gradient(90deg, 
@@ -32,18 +30,6 @@ body {
     var(--bg-color-dark) 70%, 
     var(--bg-dull) 100%
   );
-}
-.col-md-8{
-  flex:3;
-  display: flex;
-}
-
-.col-md-2 {
-  flex:1;
-
-  background:var(--bg-dull);
-  border: none;
-  border-style: none;
 }
 
 .content {
@@ -58,10 +44,10 @@ body {
     );
   background-size: 300% 300%;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 1em .1em var(--text-color);
+  box-shadow: 0 0 1rem .1rem var(--text-color);
 
   height: auto;
-  width: 35%;
+  width: 28rem;
   margin: auto;
   margin-top: 5%;
   padding: 0;
@@ -70,9 +56,6 @@ body {
   flex-direction: column;
   animation: gradient 5s linear infinite alternate-reverse;
 }
-.content > div {
-  margin: 0em 0;
-}
 
 .logo-structre-container{
   width: 60%;
@@ -80,12 +63,25 @@ body {
   margin: auto;
   position: relative;
 }
+
+@media (max-width: 500px) {
+  .content{
+    border-radius: 1.5rem;
+    width: 90%;
+    margin-top: 40%;
+  }
+  .logo-structre-container{
+    width: 70%;
+  }
+}
+
 .company-logo{
   width: 100%;
   height: auto;
   margin: auto;
   position: relative;
 }
+
 .box-logo{
   --speed: 2.3s;
   width: 23.6%;
@@ -99,23 +95,25 @@ body {
 }
 
 .message-body{
-  width: 80%;
+  width: 95%;
   height: auto;
   margin:0;
 }
 
 .redirect-message {
-  font-size: .9em;
+  font-size: .9rem;
   text-transform: uppercase;
   white-space: pre-wrap;
 }
 #countdown {
   color: var(--accent-color);
+  margin-top: 2rem;
   text-transform: none;
 }
 .row {
   margin: 0;
 }
+
 
 @keyframes logo-spin {
 
