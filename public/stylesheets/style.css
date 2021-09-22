@@ -139,8 +139,20 @@ body {
 }
 
 @keyframes gradient {
-    0%{background-position:left bottom}
-    50%{background-position:center center}
-    
-    100%{background-position:right top}
+  0%{background-position:left bottom}
+  50%{background-position:center center}
+  
+  100%{background-position:right top}
+}
+
+.button-redirect{
+  margin: 1%;
+}
+
+#form-valoration{
+  margin-top: 4%;
+}
+
+.button-continue-navigation{
+  margin-top: 2%;
 }

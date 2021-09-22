@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+let middlewares = require('./middlewares');
+const api = require('./api');
+
 companyName = "Westnet";
 msgTnx = "\nMuchas gracias por usar nuestros servicios de pago";
 msgObject = {
@@ -18,54 +21,146 @@ router.get('/payment-intention/:id', function(req, res, next) {
   res.redirect(process.env.URL_REDIRECT_GESTION.replace('${customer_id}',req.params.id));
 });
 
-/* GET home page. */
-router.get('/success', function(req, res, next) {
+router.route('/success/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next){
   res.render('redirect', {
+    'id': req.params.id,
     'redirectMessage' : msgObject.success,
     'companyName' : companyName
   });
-});
+})
 
-router.get('/bill-payed', function(req, res, next) {
+
+router.route('/bill-payed/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
     res.render('redirect', {
+      'id': req.params.id,
       'redirectMessage' : msgObject.billPayed,
       'companyName' : companyName
     });
 });
 
-router.get('/error-intention-payment', function(req, res, next) {
+router.route('/error-intention-payment/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
     res.render('redirect', {
+      'id': req.params.id,
       'redirectMessage' : msgObject.errorIntentionPayment,
       'companyName' : companyName
     });
 });
 
-router.get('/system-disabled', function(req, res, next) {
+router.route('/system-disabled/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
     res.render('redirect', {
+      'id': req.params.id,
       'redirectMessage' : msgObject.systemDisabled,
       'companyName' : companyName
     });
 });
 
-router.get('/error-bill-draft', function(req, res, next) {
+router.route('/error-bill-draft/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
   res.render('redirect', {
+    'id': req.params.id,
     'redirectMessage' : msgObject.errorBillDraft,
     'companyName' : companyName
   });
 });
 
-router.get('/canceled-pay', function(req, res, next) {
+router.route('/canceled-pay/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
   res.render('redirect', {
+    'id': req.params.id,
     'redirectMessage' : msgObject.canceledPay,
     'companyName' : companyName
   });
 });
 
-router.get('/not-success', function(req, res, next) {
+router.route('/not-success/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
   res.render('redirect', {
+    'id': req.params.id,
     'redirectMessage' : msgObject.notSuccess,
     'companyName' : companyName
   });
+});
+
+
+
+//Route with form
+router.get('/success/:id/:form', function(req, res, next){
+  res.render('redirect', {
+    'id': req.params.id,
+    'redirectMessage' : msgObject.success,
+    'companyName' : companyName,
+    'form': true
+  });
+})
+
+router.get('/bill-payed/:id/:form', function(req, res, next) {
+    res.render('redirect', {
+      'id': req.params.id,
+      'redirectMessage' : msgObject.billPayed,
+      'companyName' : companyName,
+      'form': true
+    });
+});
+
+router.get('/error-intention-payment/:id/:form', function(req, res, next) {
+    res.render('redirect', {
+      'id': req.params.id,
+      'redirectMessage' : msgObject.errorIntentionPayment,
+      'companyName' : companyName,
+      'form': true
+    });
+});
+
+router.get('/system-disabled/:id/:form', function(req, res, next) {
+    res.render('redirect', {
+      'id': req.params.id,
+      'redirectMessage' : msgObject.systemDisabled,
+      'companyName' : companyName,
+      'form': true
+    });
+});
+
+router.get('/error-bill-draft/:id/:form', function(req, res, next) {
+  res.render('redirect', {
+    'id': req.params.id,
+    'redirectMessage' : msgObject.errorBillDraft,
+    'companyName' : companyName,
+    'form': true
+  });
+});
+
+router.get('/canceled-pay/:id/:form', function(req, res, next) {
+  res.render('redirect', {
+    'id': req.params.id,
+    'redirectMessage' : msgObject.canceledPay,
+    'companyName' : companyName,
+    'form': true
+  });
+});
+
+router.get('/not-success/:id/:form', function(req, res, next) {
+  res.render('redirect', {
+    'id': req.params.id,
+    'redirectMessage' : msgObject.notSuccess,
+    'companyName' : companyName,
+    'form': true
+  });
+});
+
+router.post('/create-valoration', function(req, res, next) {
+  api.getToken()
+  .then((response) => {
+    api.createValoration(response.data['access_token'],req.body)
+    .then((result) => {
+       res.redirect(req.headers.referer.replace('/form',''));
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect(req.headers.referer.replace('/form',''));
+    })
+
+  })
+  .catch((error) => {
+    res.redirect(req.headers.referer.replace('/form',''));
+  })
+
 });
 
 module.exports = router;
