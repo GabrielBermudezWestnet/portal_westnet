@@ -30,7 +30,7 @@ router.route('/success/:id').get(middlewares.isHavePaymentIntentionValoration, f
 })
 
 
-router.route('/bill-payed/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
+router.get('/bill-payed', function(req, res, next) {
     res.render('redirect', {
       'id': req.params.id,
       'redirectMessage' : msgObject.billPayed,
@@ -89,15 +89,6 @@ router.get('/success/:id/:form', function(req, res, next){
     'form': true
   });
 })
-
-router.get('/bill-payed/:id/:form', function(req, res, next) {
-    res.render('redirect', {
-      'id': req.params.id,
-      'redirectMessage' : msgObject.billPayed,
-      'companyName' : companyName,
-      'form': true
-    });
-});
 
 router.get('/error-intention-payment/:id/:form', function(req, res, next) {
     res.render('redirect', {

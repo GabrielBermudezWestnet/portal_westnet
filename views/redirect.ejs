@@ -30,24 +30,25 @@
                     <div id="countdown"></div>
                 </div>
             </div>
-            <center><button type="submit" class="btn btn-danger button-continue-navigation">Continuar Navegando</button></center>
+            <center><a href="https://westnet.com.ar" class="btn btn-danger button-continue-navigation">Continuar Navegando</a></center>
             <% if(typeof form !== 'undefined' && form){ %>
                 <div class="d-flex justify-content-center">
                     <form style="border: 1px solid white;" class=p-4 id="form-valoration" action="/portal/create-valoration" method="POST">
                         <div class="d-flex justify-content-center">
-                            <h3>Encuesta de valoración <small>(Opcional)</small></h3>
+                            <h3>Encuesta de valoración del nuevo método de pago <small>(Opcional)</small></h3>
                         </div>
-                        <div class="mb-3">
+			<hr>
+                       <!-- <div class="mb-3">
                             <label class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="input-name" name="name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email:</label>
                             <input type="text" class="form-control" id="input-email" name="email">
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <label class="form-label">Mensaje:</label>
-                            <textarea rows="10" cols="50" class="form-control" id="input-message" name="message"></textarea>
+                            <textarea rows="10" cols="50" class="form-control" id="input-message" name="message" required></textarea>
                         </div>
                         <div>
                             <input type="hidden" name="id" value="<%=id%>">
