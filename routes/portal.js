@@ -46,7 +46,7 @@ router.route('/error-intention-payment/:id').get(middlewares.isHavePaymentIntent
     });
 });
 
-router.route('/system-disabled/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
+router.route('/system-disabled').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
     res.render('redirect', {
       'id': req.params.id,
       'redirectMessage' : msgObject.systemDisabled,
@@ -54,7 +54,7 @@ router.route('/system-disabled/:id').get(middlewares.isHavePaymentIntentionValor
     });
 });
 
-router.route('/error-bill-draft/:id').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
+router.route('/error-bill-draft').get(middlewares.isHavePaymentIntentionValoration, function(req, res, next) {
   res.render('redirect', {
     'id': req.params.id,
     'redirectMessage' : msgObject.errorBillDraft,
@@ -106,24 +106,6 @@ router.get('/error-intention-payment/:id/:form', function(req, res, next) {
       'companyName' : companyName,
       'form': true
     });
-});
-
-router.get('/system-disabled/:id/:form', function(req, res, next) {
-    res.render('redirect', {
-      'id': req.params.id,
-      'redirectMessage' : msgObject.systemDisabled,
-      'companyName' : companyName,
-      'form': true
-    });
-});
-
-router.get('/error-bill-draft/:id/:form', function(req, res, next) {
-  res.render('redirect', {
-    'id': req.params.id,
-    'redirectMessage' : msgObject.errorBillDraft,
-    'companyName' : companyName,
-    'form': true
-  });
 });
 
 router.get('/canceled-pay/:id/:form', function(req, res, next) {
