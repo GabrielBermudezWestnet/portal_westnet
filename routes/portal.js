@@ -13,6 +13,7 @@ msgObject = {
   errorBillDraft : "Esta factura no es valida para ser pagada\n"+msgTnx,
   canceledPay : "Usted ha cancelado su pago\nSi desea pagar  de nuevo, inicie el proceso nuevamente\n"+msgTnx,
   notSuccess : "Su pago no pudo ser completado\nIntente nuevamente más tarde\n"+msgTnx,
+  companyDisabled: "Actualmente no se encuentra habilitado este medio de pago en su cuenta\nPor favor aguarde nuevas mejoras\n"+msgTnx,
 };
 
 /* GET home page. */
@@ -78,6 +79,12 @@ router.route('/not-success/:id').get(middlewares.isHavePaymentIntentionValoratio
   });
 });
 
+router.get('/company-disabled', function(req, res, next) {
+  res.render('redirect', {
+    'redirectMessage' : msgObject.companyDisabled,
+    'companyName' : companyName
+  });
+});
 
 
 //Route with form
