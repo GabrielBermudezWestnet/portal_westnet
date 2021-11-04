@@ -132,7 +132,6 @@ router.post('/create-valoration', function(req, res, next) {
        res.redirect(req.headers.referer.replace('/form',''));
     })
     .catch((error) => {
-      console.log(error);
       res.redirect(req.headers.referer.replace('/form',''));
     })
 
