@@ -142,4 +142,13 @@ router.post('/create-valoration', function(req, res, next) {
 
 });
 
+router.get('/error-intention-payment/:form', function(req, res, next) {
+    res.render('redirect', {
+      'id': 0,
+      'redirectMessage' : msgObject.errorIntentionPayment,
+      'companyName' : companyName,
+      'form': true
+    });
+});
+
 module.exports = router;
