@@ -2,7 +2,7 @@ const axios = require('axios');
 
 exports.getToken = () => {
 	return axios.post(process.env.URL_GESTION+'ivr/v1/auth/token', {
-		username: 'ivruser',
+		username: 'portal_westnet',
 		password: 'w3stn3t1257',
 		client_id: 'ivr_user',
 		client_secret: '4kjaw4a0d0ks09sdfi9ersj23i4l2309aid09qe',
